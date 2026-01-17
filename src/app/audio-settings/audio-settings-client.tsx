@@ -8,13 +8,13 @@ import { Card } from "@/components/ui/card"
 import { useLoading } from "@/context/loading-context"
 import { createHttpClient } from "@/lib/http-client"
 import { cn } from "@/lib/utils"
-// Use the new component
+
 import { AudioSettingsQueueItem } from "@/components/audio-settings-queue-item"
 import { MotionDiv, FadeInItem, slideUp, slideDown, fadeIn } from "@/components/motion-primitives"
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"
 
-// Queue Item Interface
+
 interface QueueItem {
     id: string
     file: File
@@ -36,14 +36,14 @@ export default function AudioSettingsPage() {
 
         const newItems: QueueItem[] = []
         Array.from(selectedFiles).forEach(file => {
-            // Check for duplicates based on name and size
+
             const exists = queue.some(item => item.file.name === file.name && item.file.size === file.size)
             if (!exists) {
                 newItems.push({
                     id: Math.random().toString(36).substring(7),
                     file,
-                    bitrate: "192", // Default
-                    sampleRate: 48000 // Default
+                    bitrate: "192",
+                    sampleRate: 48000
                 })
             }
         })
@@ -120,21 +120,19 @@ export default function AudioSettingsPage() {
 
         const formData = new FormData()
 
-        // 1. Append all files
+
         queue.forEach(item => {
             formData.append("files", item.file)
         })
 
-        // 2. Append configurations
-        // The backend expects a JSON-like structure or array of objects matching the files.
-        // Based on the user request, we construct the configurations array.
+
         const configurations = queue.map(item => ({
             filename: item.file.name,
             bitrate: item.bitrate,
             sampleRate: item.sampleRate
         }))
 
-        // We send it as a JSON string to ensure structured data holds
+
         formData.append("configurations", JSON.stringify(configurations))
 
         try {
@@ -153,8 +151,7 @@ export default function AudioSettingsPage() {
                 ? `${queue[0].file.name.replace(/\.[^/.]+$/, "")}.mp3`
                 : "converted_audio_files.zip"
 
-            // Should likely always be zip for batch endpoint unless backend adapts, 
-            // but let's stick to zip if > 1 or generally for batch.
+
             if (queue.length > 1) {
                 a.download = "converted_files.zip"
             }
@@ -182,11 +179,11 @@ export default function AudioSettingsPage() {
             </MotionDiv>
 
             <div className="grid lg:grid-cols-12 gap-8 items-start">
-                {/* Left Side: Upload Area */}
+
                 <MotionDiv variants={fadeIn} delay={0.2} className="lg:col-span-12 xl:col-span-12">
                     <Card className="w-full p-8 bg-background/60 backdrop-blur-sm border-slate-200/50 dark:border-slate-800/50 shadow-2xl min-h-[300px] flex flex-col">
 
-                        {/* Drop Zone */}
+
                         <div
                             className={cn(
                                 "border-2 border-dashed rounded-xl p-10 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 gap-4 mb-8",
@@ -220,7 +217,7 @@ export default function AudioSettingsPage() {
                             />
                         </div>
 
-                        {/* Queue Header & Actions */}
+
                         <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-4">
                             <h2 className="text-xl font-semibold flex items-center gap-2">
                                 Configuration Queue <span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">{queue.length}</span>
@@ -249,7 +246,7 @@ export default function AudioSettingsPage() {
                             </div>
                         </div>
 
-                        {/* List */}
+
                         <div className="space-y-3">
                             <AnimatePresence mode="popLayout">
                                 {queue.length === 0 ? (

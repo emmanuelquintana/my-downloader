@@ -30,7 +30,7 @@ export function AudioSettingsQueueItem({
         <Card className="p-4 relative group overflow-hidden border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 transition-all hover:shadow-md">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
 
-                {/* File Info */}
+
                 <div className="flex items-center gap-3 flex-1 min-w-0">
                     <div className="h-10 w-10 rounded-lg bg-violet-100 dark:bg-violet-900/20 flex items-center justify-center flex-shrink-0">
                         <FileAudio className="h-5 w-5 text-violet-600 dark:text-violet-400" />
@@ -45,10 +45,10 @@ export function AudioSettingsQueueItem({
                     </div>
                 </div>
 
-                {/* Settings Controls */}
+
                 <div className="flex flex-wrap items-center gap-3 sm:justify-end">
 
-                    {/* Bitrate Toggle */}
+
                     <div className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-md p-1 h-8">
                         <button
                             onClick={() => onBitrateChange("128")}
@@ -90,7 +90,7 @@ export function AudioSettingsQueueItem({
                         </button>
                     </div>
 
-                    {/* Sample Rate Toggle */}
+
                     <div className="flex items-center bg-slate-100 dark:bg-slate-800 rounded-md p-1 h-8">
                         <button
                             onClick={() => onSampleRateChange(44100)}
@@ -119,7 +119,7 @@ export function AudioSettingsQueueItem({
                         </button>
                     </div>
 
-                    {/* Actions */}
+
                     <div className="flex items-center gap-1 pl-2 border-l border-slate-100 dark:border-slate-800">
                         <Button
                             size="sm"

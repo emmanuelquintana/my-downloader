@@ -8,7 +8,7 @@ import { Card } from "@/components/ui/card"
 import { useLoading } from "@/context/loading-context"
 import { createHttpClient } from "@/lib/http-client"
 import { cn } from "@/lib/utils"
-// Use the new component
+
 import { MergerQueueItem } from "@/components/merger-queue-item"
 import { MotionDiv, FadeInItem, slideUp, slideDown, fadeIn } from "@/components/motion-primitives"
 
@@ -28,9 +28,9 @@ export default function MergerPage() {
 
         const newFiles: File[] = []
         Array.from(selectedFiles).forEach(file => {
-            // Accept audio files
+
             if (file.type.startsWith("audio/") || file.type === "video/mp4") {
-                // Check for duplicates
+
                 const exists = files.some(f => f.name === file.name && f.size === file.size)
                 if (!exists) {
                     newFiles.push(file)
@@ -120,7 +120,7 @@ export default function MergerPage() {
             </MotionDiv>
 
             <div className="grid lg:grid-cols-12 gap-8 items-start">
-                {/* Left Side: Upload Area */}
+
                 <MotionDiv variants={fadeIn} delay={0.2} className="lg:col-span-7 xl:col-span-8 order-2 lg:order-1">
                     <Card className="w-full p-8 bg-background/60 backdrop-blur-sm border-slate-200/50 dark:border-slate-800/50 shadow-2xl min-h-[400px] flex flex-col">
                         <div
@@ -179,7 +179,7 @@ export default function MergerPage() {
                     </Card>
                 </MotionDiv>
 
-                {/* Right Side: Queue List */}
+
                 <MotionDiv variants={slideUp} delay={0.3} className="lg:col-span-5 xl:col-span-4 order-1 lg:order-2 space-y-4">
                     <div className="flex items-center justify-between px-1">
                         <h2 className="text-xl font-semibold flex items-center gap-2">

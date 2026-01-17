@@ -17,7 +17,7 @@ import { createHttpClient } from "@/lib/http-client"
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:3001"
 
-// Combined type for local state
+
 interface QueueItem {
   data: VideoData;
   config: DownloadItem;
@@ -30,27 +30,26 @@ export default function Home() {
   const loadingContext = useLoading()
   const client = createHttpClient(loadingContext)
 
-  /* URL Validation Regex */
-  /* URL Validation Regex - Permissive to allow query params */
+
   const URL_REGEX = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/.*)?$/i
 
   const handleAddToQueue = async () => {
     if (!url) return
 
-    // Validate URL
+
     if (!URL_REGEX.test(url)) {
       toast.error("Por favor ingresa una URL válida")
       return
     }
 
-    // Check if already in queue
+
     if (queue.some(item => item.data.original_url === url)) {
       toast.warning("Este video ya está en la cola")
       return
     }
 
     try {
-      // 1. Get Metadata
+
       const endpoint = `${API_URL}/api/v1/downloader/metadata?url=${encodeURIComponent(url)}`
       const json = await client.get<ApiResponse>(endpoint)
 
@@ -58,7 +57,7 @@ export default function Home() {
         throw new Error(json.message || "Error desconocido al procesar el video")
       }
 
-      // Add to queue with default config
+
       const newItem: QueueItem = {
         data: json.data,
         config: {
@@ -90,18 +89,18 @@ export default function Home() {
     })
   }
 
-  // Single Download (Now uses POST with config)
+
   const handleSingleDownload = async (item: QueueItem) => {
     try {
       const endpoint = `${API_URL}/api/v1/downloader/stream`
-      // We use POST now to send options
+
       const blob = await client.post<Blob>(endpoint, item.config)
 
-      // Trigger Download
+
       const url = window.URL.createObjectURL(blob)
       const a = document.createElement("a")
       a.href = url
-      // Determine extension
+
       const ext = item.config.type === 'audio' ? 'mp3' : 'mp4'
       a.download = `${item.data.title || 'download'}.${ext}`
       document.body.appendChild(a)
@@ -115,12 +114,12 @@ export default function Home() {
     }
   }
 
-  // Batch Download (Sends List of Configs)
+
   const handleBatchDownload = async () => {
     if (queue.length === 0) return
 
     try {
-      // Construct BatchRequest
+
       const items = queue.map(q => q.config)
       const payload: BatchRequest = { items }
 

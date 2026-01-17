@@ -44,7 +44,7 @@ export function VideoCard({ video, config, onConfigChange, onRemove, onDownload 
                 </Button>
 
                 <div className="grid md:grid-cols-5 gap-0 h-full">
-                    {/* Columna Izquierda: Miniatura */}
+
                     <div className="md:col-span-2 relative h-48 md:h-full bg-black group min-h-[200px]">
                         <Image
                             src={video.thumbnail}
@@ -63,7 +63,7 @@ export function VideoCard({ video, config, onConfigChange, onRemove, onDownload 
                         </div>
                     </div>
 
-                    {/* Columna Derecha: Datos y Configuración */}
+
                     <div className="md:col-span-3 p-6 flex flex-col justify-between">
                         <div>
                             <div className="flex items-center justify-between mb-2">
@@ -84,7 +84,7 @@ export function VideoCard({ video, config, onConfigChange, onRemove, onDownload 
                             </div>
                         </div>
 
-                        {/* Configuration Area */}
+
                         <div className="mt-4 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
                             <div className="flex items-center gap-2 mb-3 text-sm font-semibold text-muted-foreground">
                                 <Settings2 className="w-4 h-4" />
@@ -92,7 +92,7 @@ export function VideoCard({ video, config, onConfigChange, onRemove, onDownload 
                             </div>
 
                             <div className="grid grid-cols-2 gap-3 mb-4">
-                                {/* Type Selector */}
+
                                 <div className="space-y-1">
                                     <label className="text-xs font-medium text-muted-foreground">Format</label>
                                     <select
@@ -105,7 +105,7 @@ export function VideoCard({ video, config, onConfigChange, onRemove, onDownload 
                                     </select>
                                 </div>
 
-                                {/* Quality Selector */}
+
                                 <div className="space-y-1">
                                     <label className="text-xs font-medium text-muted-foreground">Quality</label>
                                     <select

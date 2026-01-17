@@ -32,7 +32,7 @@ export function ModeToggle() {
             whileTap={{ scale: 0.95 }}
             aria-label="Toggle theme"
         >
-            {/* Background elements for day/night feel */}
+
             <div className="absolute inset-0 overflow-hidden rounded-full">
                 <AnimatePresence mode="wait">
                     {!isDark && (

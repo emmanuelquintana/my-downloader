@@ -17,7 +17,7 @@ export function SiteFooter() {
             <div className="w-full px-8 md:px-12 lg:px-24">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
 
-                    {/* Brand & Description */}
+
                     <div className="space-y-4">
                         <h3 className="text-lg font-bold tracking-tighter">Video Downloader</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
@@ -25,7 +25,7 @@ export function SiteFooter() {
                         </p>
                     </div>
 
-                    {/* Sitemap - Centered on Desktop */}
+
                     <div className="space-y-4 md:text-center">
                         <h3 className="text-lg font-bold tracking-tighter">Sitemap</h3>
                         <nav className="flex flex-col space-y-2 text-sm text-muted-foreground md:items-center">
@@ -38,7 +38,7 @@ export function SiteFooter() {
                         </nav>
                     </div>
 
-                    {/* Contact - Right Aligned on Desktop */}
+
                     <div className="space-y-4 md:text-right">
                         <h3 className="text-lg font-bold tracking-tighter">Contacto</h3>
                         <div className="flex flex-col space-y-2 text-sm text-muted-foreground md:items-end">

@@ -3,7 +3,6 @@
 import { motion, HTMLMotionProps, Variants } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-// Variants
 export const fadeIn: Variants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -35,7 +34,6 @@ export const staggerContainer: Variants = {
     },
 };
 
-// Components
 interface MotionDivProps extends HTMLMotionProps<"div"> {
     className?: string;
     delay?: number;
