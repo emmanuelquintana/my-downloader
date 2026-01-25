@@ -50,7 +50,7 @@ export function SiteFooter() {
                                 quintanatorresjoseemmanuel1dm@gmail.com
                             </a>
                             <p className="text-xs text-muted-foreground/60 pt-2">
-                                &copy; {new Date().getFullYear()} Antigravity. Todos los derechos reservados.
+                                &copy; {new Date().getFullYear()} jose emmanuel quintana. Todos los derechos reservados.
                             </p>
                         </div>
                     </div>
