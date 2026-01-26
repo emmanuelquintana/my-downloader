@@ -150,7 +150,7 @@ export default function ConverterPage() {
     return (
         <MotionDiv className="w-full flex min-h-[calc(100vh-14rem)] flex-col py-10 relative z-10 px-4 max-w-7xl mx-auto">
             <MotionDiv variants={slideDown} className="text-center space-y-4 mb-12">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-emerald-500 to-teal-500 pb-2">
                     Conversión de Video
                 </h1>
                 <p className="text-muted-foreground md:text-xl">

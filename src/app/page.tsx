@@ -154,7 +154,7 @@ export default function Home() {
       <MotionDiv className="w-full max-w-3xl space-y-8 relative z-10 text-center">
 
         <MotionDiv variants={slideUp} delay={0.1} className="space-y-2">
-          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
+          <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 pb-2">
             Descargador de Videos
           </h1>
           <p className="text-muted-foreground">
