@@ -179,7 +179,7 @@ export default function Home() {
             onClick={handleAddToQueue}
             disabled={loadingContext.isLoading || !url}
           >
-            {loadingContext.isLoading ? <Loader2 className="animate-spin" /> : "Add to Queue"}
+            {loadingContext.isLoading ? <Loader2 className="animate-spin" /> : "Agregar a la cola"}
           </Button>
         </MotionDiv>
 

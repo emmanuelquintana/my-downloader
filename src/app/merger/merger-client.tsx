@@ -112,10 +112,10 @@ export default function MergerPage() {
         <MotionDiv className="w-full flex min-h-[calc(100vh-14rem)] flex-col py-10 relative z-10 px-4 max-w-7xl mx-auto">
             <MotionDiv variants={slideDown} className="text-center space-y-4 mb-12">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-rose-500">
-                    Audio Merger
+                    Fusión de Audio
                 </h1>
                 <p className="text-muted-foreground md:text-xl">
-                    Combine multiple audio files into a single track.
+                    Combina varios archivos de audio en un solo archivo.
                 </p>
             </MotionDiv>
 
@@ -140,7 +140,7 @@ export default function MergerPage() {
                             </div>
                             <div className="text-center space-y-2">
                                 <h3 className="text-lg font-semibold">
-                                    {files.length > 0 ? "Add more files" : "Click to upload or drag files"}
+                                    {files.length > 0 ? "Agregar más archivos" : "Click para subir o arrastrar archivos"}
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
                                     MP3, WAV, M4A, etc.
@@ -166,11 +166,11 @@ export default function MergerPage() {
                                 >
                                     {loadingContext.isLoading || isMerging ? (
                                         <>
-                                            <Loader2 className="mr-2 h-5 w-5 animate-spin" /> Merging...
+                                            <Loader2 className="mr-2 h-5 w-5 animate-spin" /> Fusionando...
                                         </>
                                     ) : (
                                         <>
-                                            <Merge className="mr-2 h-5 w-5" /> Merge Files ({files.length})
+                                            <Merge className="mr-2 h-5 w-5" /> Fusionar archivos ({files.length})
                                         </>
                                     )}
                                 </Button>
@@ -187,7 +187,7 @@ export default function MergerPage() {
                         </h2>
                         {files.length > 0 && (
                             <Button variant="ghost" size="sm" onClick={clearAll} className="text-muted-foreground hover:text-destructive h-8 px-2 text-xs">
-                                <Trash2 className="w-3 h-3 mr-1" /> Clear All
+                                <Trash2 className="w-3 h-3 mr-1" /> Limpiar todo
                             </Button>
                         )}
                     </div>
@@ -202,8 +202,8 @@ export default function MergerPage() {
                                     animate="visible"
                                 >
                                     <Plus className="w-8 h-8 mb-2 opacity-50" />
-                                    <p>No tracks added</p>
-                                    <p className="text-xs opacity-70">Add files to merge them</p>
+                                    <p> No hay archivos</p>
+                                    <p className="text-xs opacity-70">Agregar archivos para fusionarlos</p>
                                 </FadeInItem>
                             ) : (
                                 files.map((file, index) => (

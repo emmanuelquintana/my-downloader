@@ -151,10 +151,10 @@ export default function ConverterPage() {
         <MotionDiv className="w-full flex min-h-[calc(100vh-14rem)] flex-col py-10 relative z-10 px-4 max-w-7xl mx-auto">
             <MotionDiv variants={slideDown} className="text-center space-y-4 mb-12">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
-                    Batch MP4 to MP3
+                    Convert MP4 to MP3
                 </h1>
                 <p className="text-muted-foreground md:text-xl">
-                    Convert multiple videos to high-quality audio at once.
+                    Convertir multiples videos a audio de alta calidad.
                 </p>
             </MotionDiv>
 
@@ -179,10 +179,10 @@ export default function ConverterPage() {
                             </div>
                             <div className="text-center space-y-2">
                                 <h3 className="text-lg font-semibold">
-                                    {files.length > 0 ? "Add more files" : "Click to upload or drag and drop"}
+                                    {files.length > 0 ? "Agregar más archivos" : "Click para subir o arrastrar y soltar"}
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
-                                    MP4, AVI, MOV (max 500MB per file)
+                                    MP4, AVI, MOV (max 500MB por archivo)
                                 </p>
                             </div>
                             <input
@@ -209,7 +209,7 @@ export default function ConverterPage() {
                                         </>
                                     ) : (
                                         <>
-                                            <Music className="mr-2 h-5 w-5" /> Convert All ({files.length})
+                                            <Music className="mr-2 h-5 w-5" /> Convertir todo ({files.length})
                                         </>
                                     )}
                                 </Button>
@@ -222,11 +222,11 @@ export default function ConverterPage() {
                 <MotionDiv variants={slideUp} delay={0.3} className="lg:col-span-5 xl:col-span-4 order-1 lg:order-2 space-y-4">
                     <div className="flex items-center justify-between px-1">
                         <h2 className="text-xl font-semibold flex items-center gap-2">
-                            Queue <span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">{files.length}</span>
+                            Cola <span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">{files.length}</span>
                         </h2>
                         {files.length > 0 && (
                             <Button variant="ghost" size="sm" onClick={clearAll} className="text-muted-foreground hover:text-destructive h-8 px-2 text-xs">
-                                <Trash2 className="w-3 h-3 mr-1" /> Clear All
+                                <Trash2 className="w-3 h-3 mr-1" /> Limpiar todo
                             </Button>
                         )}
                     </div>
@@ -241,8 +241,8 @@ export default function ConverterPage() {
                                     animate="visible"
                                 >
                                     <Plus className="w-8 h-8 mb-2 opacity-50" />
-                                    <p>No files in queue</p>
-                                    <p className="text-xs opacity-70">Upload videos to start</p>
+                                    <p>No hay archivos en la cola</p>
+                                    <p className="text-xs opacity-70">Sube videos para comenzar</p>
                                 </FadeInItem>
                             ) : (
                                 files.map((file, index) => (

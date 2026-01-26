@@ -171,10 +171,10 @@ export default function AudioSettingsPage() {
         <MotionDiv className="w-full flex min-h-[calc(100vh-14rem)] flex-col py-10 relative z-10 px-4 max-w-7xl mx-auto">
             <MotionDiv variants={slideDown} className="text-center space-y-4 mb-12">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                    Advanced Audio Settings
+                    Configuración Avanzada de Audio
                 </h1>
                 <p className="text-muted-foreground md:text-xl">
-                    Convert videos to MP3 with custom Bitrate and Sample Rate.
+                    Convertir videos a MP3 con Bitrate y Sample Rate personalizados.
                 </p>
             </MotionDiv>
 
@@ -201,7 +201,7 @@ export default function AudioSettingsPage() {
                             </div>
                             <div className="text-center space-y-1">
                                 <h3 className="text-lg font-semibold">
-                                    Click to upload or drag files
+                                    Click para subir o arrastrar archivos
                                 </h3>
                                 <p className="text-sm text-muted-foreground">
                                     MP4, AVI, MOV, etc.
@@ -220,13 +220,13 @@ export default function AudioSettingsPage() {
 
                         <div className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-4">
                             <h2 className="text-xl font-semibold flex items-center gap-2">
-                                Configuration Queue <span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">{queue.length}</span>
+                                Cola de Configuración <span className="bg-primary/10 text-primary text-xs px-2 py-0.5 rounded-full">{queue.length}</span>
                             </h2>
                             <div className="flex items-center gap-2 w-full sm:w-auto">
                                 {queue.length > 0 && (
                                     <>
                                         <Button variant="ghost" size="sm" onClick={clearAll} className="text-muted-foreground hover:text-destructive h-9">
-                                            <Trash2 className="w-4 h-4 mr-2" /> Clear Queue
+                                            <Trash2 className="w-4 h-4 mr-2" /> Limpiar Cola
                                         </Button>
                                         <Button
                                             size="sm"
@@ -239,7 +239,7 @@ export default function AudioSettingsPage() {
                                             ) : (
                                                 <Music className="mr-2 h-4 w-4" />
                                             )}
-                                            Convert All
+                                            Convertir todo
                                         </Button>
                                     </>
                                 )}
@@ -256,7 +256,8 @@ export default function AudioSettingsPage() {
                                         initial="hidden"
                                         animate="visible"
                                     >
-                                        <p>Queue is empty</p>
+                                        <p>No hay archivos en la cola</p>
+                                        <p className="text-xs opacity-70">Arrastra archivos para comenzar</p>
                                     </FadeInItem>
                                 ) : (
                                     queue.map((item) => (
