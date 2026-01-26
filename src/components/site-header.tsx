@@ -54,7 +54,7 @@ export function SiteHeader() {
                                         )}
                                     >
                                         <Download className="h-5 w-5" />
-                                        Downloader
+                                        Descargador
                                     </Link>
                                     <Link
                                         href="/converter"
@@ -67,7 +67,7 @@ export function SiteHeader() {
                                         )}
                                     >
                                         <RefreshCw className="h-5 w-5" />
-                                        Converter
+                                        Convertidor
                                     </Link>
                                     <Link
                                         href="/audio-settings"
@@ -80,7 +80,7 @@ export function SiteHeader() {
                                         )}
                                     >
                                         <Settings2 className="h-5 w-5" />
-                                        Audio Settings
+                                        Configuración de Audio
                                     </Link>
                                     <Link
                                         href="/merger"
@@ -93,7 +93,7 @@ export function SiteHeader() {
                                         )}
                                     >
                                         <Merge className="h-5 w-5" />
-                                        Merger
+                                        Fusión
                                     </Link>
                                 </div>
                                 <div className="mt-auto border-t pt-4">
@@ -121,7 +121,7 @@ export function SiteHeader() {
                                 pathname === "/" ? "text-foreground" : "text-foreground/60"
                             )}
                         >
-                            Downloader
+                            Descargador
                         </Link>
                         <Link
                             href="/converter"
@@ -130,7 +130,7 @@ export function SiteHeader() {
                                 pathname === "/converter" ? "text-foreground" : "text-foreground/60"
                             )}
                         >
-                            Converter
+                            Convertidor
                         </Link>
                         <Link
                             href="/audio-settings"
@@ -139,7 +139,7 @@ export function SiteHeader() {
                                 pathname === "/audio-settings" ? "text-foreground" : "text-foreground/60"
                             )}
                         >
-                            Audio Settings
+                            Configuración de Audio
                         </Link>
                         <Link
                             href="/merger"
@@ -148,7 +148,7 @@ export function SiteHeader() {
                                 pathname === "/merger" ? "text-foreground" : "text-foreground/60"
                             )}
                         >
-                            Merger
+                            Fusión
                         </Link>
                     </nav>
                     <ModeToggle />

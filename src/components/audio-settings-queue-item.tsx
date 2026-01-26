@@ -128,7 +128,7 @@ export function AudioSettingsQueueItem({
                             onClick={onConvert}
                             disabled={isConverting}
                         >
-                            {isConverting ? "..." : "Convert"}
+                            {isConverting ? "..." : "Convertir"}
                         </Button>
                         <Button
                             variant="ghost"

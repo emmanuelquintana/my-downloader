@@ -34,7 +34,7 @@ export function ConverterQueueItem({ file, onRemove, onConvert, isConverting }: 
                         onClick={onConvert}
                         disabled={isConverting}
                     >
-                        {isConverting ? "..." : "Convert"}
+                        {isConverting ? "..." : "Convertir"}
                     </Button>
                     <Button
                         variant="ghost"

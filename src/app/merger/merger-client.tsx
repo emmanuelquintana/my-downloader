@@ -73,7 +73,7 @@ export default function MergerPage() {
 
     const handleMerge = async () => {
         if (files.length < 2) {
-            alert("Please select at least 2 files to merge.")
+            alert("Por favor selecciona al menos 2 archivos para fusionar.")
             return
         }
 

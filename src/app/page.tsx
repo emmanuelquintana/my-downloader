@@ -155,7 +155,7 @@ export default function Home() {
 
         <MotionDiv variants={slideUp} delay={0.1} className="space-y-2">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-600 dark:from-white dark:to-slate-400">
-            Video Downloader
+            Descargador de Videos
           </h1>
           <p className="text-muted-foreground">
             Descarga videos en MP4 y Mp3. Configura calidad y formato para cada video.
@@ -203,7 +203,7 @@ export default function Home() {
                   ) : (
                     <Layers className="mr-2 h-5 w-5" />
                   )}
-                  Download Batch ({queue.length})
+                  Descargar en Lote ({queue.length})
                 </Button>
               )}
 
@@ -215,7 +215,7 @@ export default function Home() {
                 disabled={loadingContext.isLoading}
               >
                 <Trash2 className="mr-2 h-5 w-5" />
-                Clear All
+                Limpiar Todo
               </Button>
             </MotionDiv>
           )}

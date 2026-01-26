@@ -88,13 +88,13 @@ export function VideoCard({ video, config, onConfigChange, onRemove, onDownload 
                         <div className="mt-4 p-4 bg-slate-50 dark:bg-slate-800/50 rounded-lg border border-slate-100 dark:border-slate-800">
                             <div className="flex items-center gap-2 mb-3 text-sm font-semibold text-muted-foreground">
                                 <Settings2 className="w-4 h-4" />
-                                <span>Configure Download</span>
+                                <span>Configurar Descarga</span>
                             </div>
 
                             <div className="grid grid-cols-2 gap-3 mb-4">
 
                                 <div className="space-y-1">
-                                    <label className="text-xs font-medium text-muted-foreground">Format</label>
+                                    <label className="text-xs font-medium text-muted-foreground">Formato</label>
                                     <select
                                         className="w-full h-9 rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring cursor-pointer"
                                         value={config.type}
@@ -107,7 +107,7 @@ export function VideoCard({ video, config, onConfigChange, onRemove, onDownload 
 
 
                                 <div className="space-y-1">
-                                    <label className="text-xs font-medium text-muted-foreground">Quality</label>
+                                    <label className="text-xs font-medium text-muted-foreground">Calidad</label>
                                     <select
                                         className="w-full h-9 rounded-md border border-input bg-background px-3 py-1 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:opacity-50 cursor-pointer"
                                         value={config.quality}
@@ -121,9 +121,9 @@ export function VideoCard({ video, config, onConfigChange, onRemove, onDownload 
                                                 </option>
                                             ))
                                         ) : (
-                                            <option value="best">Best Audio</option>
+                                            <option value="best">Mejor Audio</option>
                                         )}
-                                        {config.type === 'video' && <option value="best">Best Available</option>}
+                                        {config.type === 'video' && <option value="best">Mejor Disponible</option>}
                                     </select>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@ export function VideoCard({ video, config, onConfigChange, onRemove, onDownload 
                                 onClick={onDownload}
                             >
                                 <Download className="w-4 h-4 mr-2" />
-                                Download {config.type === 'audio' ? 'Audio' : 'Video'}
+                                Descargar {config.type === 'audio' ? 'Audio' : 'Video'}
                             </Button>
                         </div>
 

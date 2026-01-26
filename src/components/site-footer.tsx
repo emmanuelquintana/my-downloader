@@ -27,13 +27,19 @@ export function SiteFooter() {
 
 
                     <div className="space-y-4 md:text-center">
-                        <h3 className="text-lg font-bold tracking-tighter">Sitemap</h3>
+                        <h3 className="text-lg font-bold tracking-tighter">Mapa del sitio</h3>
                         <nav className="flex flex-col space-y-2 text-sm text-muted-foreground md:items-center">
                             <Link href="/" className="hover:text-foreground transition-colors w-fit">
-                                Downloader
+                                Descargador
+                            </Link>
+                            <Link href="/merger" className="hover:text-foreground transition-colors w-fit">
+                                Fusión de Audio
+                            </Link>
+                            <Link href="/audio-settings" className="hover:text-foreground transition-colors w-fit">
+                                Configuración de Audio
                             </Link>
                             <Link href="/converter" className="hover:text-foreground transition-colors w-fit">
-                                Audio Converter
+                                Conversión de Video
                             </Link>
                         </nav>
                     </div>

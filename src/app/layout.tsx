@@ -23,20 +23,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
   title: {
-    default: "Video Downloader | Download & Convert Videos",
-    template: "%s | Video Downloader",
+    default: "Descargador de Videos | Descarga y Convierte Videos",
+    template: "%s | Descargador de Videos",
   },
-  description: "The best free tool to download videos from YouTube, TikTok, X (Twitter) and convert them to MP3 or MP4. Fast, secure, and no installation required.",
+  description: "La mejor herramienta gratuita para descargar videos de YouTube, TikTok, X (Twitter) y convertirlos a MP3 o MP4. Rápido, seguro y sin instalación.",
   keywords: [
-    "video downloader",
-    "youtube downloader",
-    "tiktok downloader",
-    "mp3 converter",
-    "audio converter",
-    "youtube to mp3",
-    "video merger",
-    "audio merger",
-    "free video downloader",
+    "descargador de videos",
+    "descargador de youtube",
+    "descargador de tiktok",
+    "convertidor mp3",
+    "convertidor de audio",
+    "youtube a mp3",
+    "fusion de videos",
+    "fusion de audio",
+    "descargador de videos gratis",
   ],
   authors: [
     {
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_ES",
     url: "/",
-    title: "Video Downloader | Download & Convert Videos",
-    description: "Download videos from your favorite platforms and convert audio easily. Fast, secure, and free.",
+    title: "Descargador de Videos | Descarga y Convierte Videos",
+    description: "Descarga videos de tus plataformas favoritas y convierte audio fácilmente. Rápido, seguro y gratis.",
     siteName: "Video Downloader",
     images: [
       {
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Video Downloader | Download & Convert Videos",
-    description: "Download videos from your favorite platforms and convert audio easily.",
+    title: "Descargador de Videos | Descarga y Convierte Videos",
+    description: "Descarga videos de tus plataformas favoritas y convierte audio fácilmente.",
     images: ["/og-image.jpg"],
     creator: "@antigravity",
   },

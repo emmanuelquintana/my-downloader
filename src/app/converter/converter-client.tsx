@@ -151,7 +151,7 @@ export default function ConverterPage() {
         <MotionDiv className="w-full flex min-h-[calc(100vh-14rem)] flex-col py-10 relative z-10 px-4 max-w-7xl mx-auto">
             <MotionDiv variants={slideDown} className="text-center space-y-4 mb-12">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
-                    Convert MP4 to MP3
+                    Conversión de Video
                 </h1>
                 <p className="text-muted-foreground md:text-xl">
                     Convertir multiples videos a audio de alta calidad.
@@ -205,7 +205,7 @@ export default function ConverterPage() {
                                 >
                                     {loadingContext.isLoading && convertingIndices.length === 0 ? (
                                         <>
-                                            <Loader2 className="mr-2 h-5 w-5 animate-spin" /> Converting {files.length} files...
+                                            <Loader2 className="mr-2 h-5 w-5 animate-spin" /> Convirtiendo {files.length} archivos...
                                         </>
                                     ) : (
                                         <>

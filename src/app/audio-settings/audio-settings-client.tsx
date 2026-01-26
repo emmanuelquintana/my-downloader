@@ -109,7 +109,7 @@ export default function AudioSettingsPage() {
 
         } catch (error) {
             console.error("Conversion failed:", error)
-            alert("Conversion failed. Please try again.")
+            alert("Fallo en la conversión. Por favor intenta de nuevo.")
         } finally {
             setConvertingIds(prev => prev.filter(id => id !== item.id))
         }
