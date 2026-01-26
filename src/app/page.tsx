@@ -25,6 +25,7 @@ interface QueueItem {
 
 export default function Home() {
   const [url, setUrl] = useState("")
+  const [touched, setTouched] = useState(false)
   const [queue, setQueue] = useState<QueueItem[]>([])
 
   const loadingContext = useLoading()
@@ -32,6 +33,7 @@ export default function Home() {
 
 
   const URL_REGEX = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/.*)?$/i
+  const isValid = !url || URL_REGEX.test(url)
 
   const handleAddToQueue = async () => {
     if (!url) return
@@ -70,6 +72,7 @@ export default function Home() {
       setQueue(prev => [...prev, newItem])
       toast.success("Agregado a la cola")
       setUrl("")
+      setTouched(false)
 
     } catch (err: any) {
       console.error(err)
@@ -162,25 +165,47 @@ export default function Home() {
           </p>
         </MotionDiv>
 
-        <MotionDiv variants={slideUp} delay={0.2} className="flex gap-2 relative max-w-xl mx-auto">
-          <div className="relative w-full">
-            <Search className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
-            <Input
-              className="pl-10 h-12 text-lg shadow-sm bg-white/80 dark:bg-slate-900/80 backdrop-blur"
-              placeholder="Pega un enlace de YouTube, TikTok, X..."
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              onKeyDown={handleKeyDown}
-            />
+
+
+        <MotionDiv variants={slideUp} delay={0.2} className="flex flex-col items-center gap-2 relative max-w-xl mx-auto w-full">
+          <div className="flex gap-2 w-full relative">
+            <div className="relative w-full">
+              <Search className="absolute left-3 top-3 h-5 w-5 text-muted-foreground" />
+              <Input
+                className="pl-10 h-12 text-lg shadow-sm bg-white/80 dark:bg-slate-900/80 backdrop-blur"
+                placeholder="Pega un enlace de YouTube, TikTok, X..."
+                value={url}
+                onChange={(e) => {
+                  setUrl(e.target.value);
+                  if (!touched) setTouched(true);
+                }}
+                onBlur={() => setTouched(true)}
+                aria-invalid={touched && !isValid}
+                onKeyDown={handleKeyDown}
+              />
+            </div>
+            <Button
+              size="lg"
+              className="h-12 px-6 font-semibold shadow-indigo-500/20 shadow-lg whitespace-nowrap"
+              onClick={handleAddToQueue}
+              disabled={loadingContext.isLoading || !url}
+            >
+              {loadingContext.isLoading ? <Loader2 className="animate-spin" /> : "Agregar a la cola"}
+            </Button>
           </div>
-          <Button
-            size="lg"
-            className="h-12 px-6 font-semibold shadow-indigo-500/20 shadow-lg whitespace-nowrap"
-            onClick={handleAddToQueue}
-            disabled={loadingContext.isLoading || !url}
-          >
-            {loadingContext.isLoading ? <Loader2 className="animate-spin" /> : "Agregar a la cola"}
-          </Button>
+
+          <AnimatePresence>
+            {touched && !isValid && (
+              <MotionDiv
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                className="text-red-500 text-sm font-medium pt-1 self-start ml-2"
+              >
+                Por favor ingresa una URL válida
+              </MotionDiv>
+            )}
+          </AnimatePresence>
         </MotionDiv>
 
         <AnimatePresence>
@@ -244,6 +269,6 @@ export default function Home() {
         </div>
 
       </MotionDiv>
-    </main>
+    </main >
   )
 }

@@ -12,7 +12,7 @@ export function SiteFooter() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeIn}
-            className="relative z-10 w-full border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 py-12 md:py-16"
+            className="relative z-50 w-full border-t bg-background py-12 md:py-16"
         >
             <div className="w-full px-8 md:px-12 lg:px-24">
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-3">

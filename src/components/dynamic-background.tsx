@@ -14,7 +14,7 @@ export function DynamicBackground() {
     if (!mounted) return null
 
     return (
-        <div className="fixed inset-0 z-0 w-full h-full overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-500">
+        <div className="fixed inset-0 -z-10 w-full h-full overflow-hidden bg-slate-50 dark:bg-slate-950 transition-colors duration-500">
 
             <div className="absolute top-0 left-0 w-full h-full opacity-40 dark:opacity-20 blur-3xl filter">
                 <div className="absolute top-0 -left-4 w-72 h-72 bg-purple-300 dark:bg-purple-900 rounded-full mix-blend-multiply dark:mix-blend-screen opacity-70 animate-blob"></div>
